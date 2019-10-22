@@ -3,8 +3,14 @@
 {% block main %}
 <div class="container">
   <div class="row">
-    <h2>{{ project_name|title }}</h2>
-    <p>Welcome to the django template</p>
+    <h2>Upcoming Performances</h2>
+  </div>
+  <div class="row">
+    <ul>
+      {% for object in object_list %}
+        <li><strong>{{ object.title }}</strong> on {{ object.when }}</li>
+      {% endfor %}
+    </ul>
   </div>
 </div>
 {% endblock %}

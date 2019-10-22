@@ -4,6 +4,12 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from natural_keys import NaturalKeyModel
 
+__all__ = (
+    'Dancer',
+    'Venue',
+    'Performance',
+    'Reservation',
+)
 
 User = get_user_model()
 
