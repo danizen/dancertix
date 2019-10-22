@@ -6,7 +6,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 # Modify the following sections to use the appropriate secret name.
-__secret_id = os.environ.setdefault('DJANGO_SECRET', 'NLM-QA-dancertix-app')
+__secret_id = os.environ.setdefault('DJANGO_SECRET', 'django-test-dancertix-app')
 
 DATABASES = {
     'default': SecretsManagerDBConfig(secret_id=__secret_id)
