@@ -1,0 +1,24 @@
+header {
+    background-color: #008;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+main {
+    background-color: white;
+    padding: 1em;
+}
+
+footer {
+    background-color: #bbe;
+    margin-top: 1em;
+    padding: 1em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.error {
+    color: FireBrick;
+}
