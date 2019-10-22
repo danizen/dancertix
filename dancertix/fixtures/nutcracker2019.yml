@@ -1,0 +1,47 @@
+- model: dancertix.venue
+  pk: 1
+  fields:
+    name: F. Scott Fitzgerald Theatre
+    location: 630 Edmunston Dr., Rockville, MD 20851
+- model: dancertix.performance
+  pk: 1
+  fields:
+    title: The Nutcracker
+    start_time: 2019-12-07 19:00:00+00:00
+    duration: 150
+    venue: 1
+- model: dancertix.performance
+  pk: 2
+  fields:
+    title: The Nutcracker
+    start_time: 2019-12-08 00:30:00+00:00
+    duration: 150
+    venue: 1
+- model: dancertix.performance
+  pk: 3
+  fields:
+    title: The Nutcracker
+    start_time: 2019-12-08 19:00:00+00:00
+    duration: 150
+    venue: 1
+- model: dancertix.performance
+  pk: 4
+  fields:
+    title: The Nutcracker
+    start_time: 2019-12-14 19:00:00+00:00
+    duration: 150
+    venue: 1
+- model: dancertix.performance
+  pk: 5
+  fields:
+    title: The Nutcracker
+    start_time: 2019-12-15 00:30:00+00:00
+    duration: 150
+    venue: 1
+- model: dancertix.performance
+  pk: 6
+  fields:
+    title: The Nutcracker
+    start_time: 2019-12-15 19:00:00+00:00
+    duration: 150
+    venue: 1

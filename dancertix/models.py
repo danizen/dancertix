@@ -50,7 +50,7 @@ class Performance(NaturalKeyModel):
 
     @property
     def when(self):
-        return datetime.strptime(self.start_time, "%b-%d %I:%M %p")
+        return datetime.strftime(self.start_time, "%b-%d at %I:%M %p")
 
     def __str__(self):
         return '%s on %s' % (self.title, self.when)

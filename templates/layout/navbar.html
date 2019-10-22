@@ -5,7 +5,20 @@
   {% if user.is_anonymous %}
     <li class="nav-item"><a class="nav-link" href="{% url 'cloudauth:login' %}">Sign in</a></li>
   {% else %}
-    <li class="nav-item"><a class="nav-link" href="{% url 'cloudauth:logout' %}">Sign out</a></li>
-    <li class="nav-item"><a class="nav-link" href="{% url 'cloudauth:profile' %}">Profile</a></li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="userNav" data-toggle="dropdown"
+         role="button" aria-haspopup="true" aria-expanded="false">
+        {{ request.user.email }}
+      </a>
+      <div class="dropdown-menu" aria-labelledby="userNav">
+        <a class="dropdown-item" href="{% url 'cloudauth:logout' %}">Sign out</a>
+        <a class="dropdown-item" href="{% url 'cloudauth:profile' %}">Profile</a>
+        {% if user_is_admin %}
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'cloudauth-admin:list' %}">Accounts</a>
+          <a class="dropdown-item" href="{% url 'cloudauth-admin:request-list' %}">Account Requests</a>
+        {% endif %}
+      </div>
+    </li>
   {% endif %}
 </ul>

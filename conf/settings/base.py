@@ -168,11 +168,30 @@ SOCIAL_AUTH_WHITELISTED_REMOTES = ('130.14', '2607:f220:41e', '2607:f220:411')
 SOCIAL_AUTH_NIHLOGIN_KEY = '1l4eejjfaf8aj87r0fgdv82n38'
 SOCIAL_AUTH_NIHLOGIN_SECRET = 'p2jk964tcekrjq1f8faa6qcbf106m1d578so4to2eqhephn577v'
 
-AUTHENTICATION_BACKENDS = (
-    'cloudauth.backends.CognitoNIH',
+SOCIAL_AUTH_OCCSGOOGLE_KEY = '1l4eejjfaf8aj87r0fgdv82n38'
+SOCIAL_AUTH_OCCSGOOGLE_SECRET = 'p2jk964tcekrjq1f8faa6qcbf106m1d578so4to2eqhephn577v'
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'cloudauth.pipeline.add_remote_ipaddr',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'cloudauth.pipeline.user_without_social_by_email',
+    'cloudauth_admin.pipeline.create_external_user',
+    'cloudauth_admin.pipeline.verify_internal_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
 )
 
-ADMIN_GROUP = 'admin'
+AUTHENTICATION_BACKENDS = (
+    'cloudauth.backends.CognitoNIH',
+    'cloudauth.backends.CognitoGoogle',
+)
+
+ADMIN_GROUP = 'Administrators'
 
 CSRF_COOKIE_HTTPONLY = True
 

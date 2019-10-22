@@ -11,7 +11,7 @@ INTERNAL_IPS = ('127.0.0.1',)
 DEBUG = True
 
 # Modify the following sections to use the appropriate secret name.
-__secret_id = os.environ.setdefault('DJANGO_DB_SECRET', 'NLM-INT-dancertix-app')
+__secret_id = os.environ.setdefault('DJANGO_DB_SECRET', 'django-test-dancertix-app')
 
 DATABASES = {
     'default': SecretsManagerDBConfig(secret_id=__secret_id, HOST='localhost', PORT=5432)
