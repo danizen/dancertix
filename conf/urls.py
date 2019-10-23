@@ -26,14 +26,19 @@ from occs_core.decorators import group_required
 
 from dancertix.views import *
 
-
-urlpatterns = [
-    path('accounts/', include('cloudauth.urls')),
-    path('accounts/', include('cloudauth_admin.pipeline_urls')),
-    path('internalonly/users/', include('cloudauth_admin.admin_urls')),
-    path('social/', include('social_django.urls', namespace='social')),
-    path('', HomeView.as_view(), name='home'),
-]
+if 'cloudauth' in settings.INSTALLED_APPS:
+    urlpatterns = [
+        path('accounts/', include('cloudauth.urls')),
+        path('accounts/', include('cloudauth_admin.pipeline_urls')),
+        path('internalonly/users/', include('cloudauth_admin.admin_urls')),
+        path('social/', include('social_django.urls', namespace='social')),
+        path('', HomeView.as_view(), name='home'),
+    ]
+else:
+    urlpatterns = [
+        path('social/', include('social_django.urls', namespace='social')),
+        path('', HomeView.as_view(), name='home'),
+    ]
 
 # URLs only for debugging
 if settings.DEBUG:
