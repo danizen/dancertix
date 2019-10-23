@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework',
 
+    'authauth',         # contains stubs for cloudauth
     'dancertix',
 ]
 
@@ -164,6 +165,9 @@ DATABASES = {
     'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
 
+
+__log_level = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -190,9 +194,15 @@ LOGGING = {
         }
     },
     'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': __log_level,
+            'propagate': True,
+        },
         'dancertix': {
             'handlers': ['console'],
-            'level': 'INFO',
+            'level': __log_level,
+            'propagate': True
         }
     }
 }

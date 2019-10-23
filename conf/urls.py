@@ -31,6 +31,7 @@ if 'cloudauth' in settings.INSTALLED_APPS:
     ]
 else:
     urlpatterns = [
+        path('accounts/', include('authauth.urls', namespace='cloudauth')),
         path('social/', include('social_django.urls', namespace='social')),
         path('', HomeView.as_view(), name='home'),
     ]
