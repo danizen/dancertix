@@ -19,11 +19,6 @@ from django.conf import settings
 
 from django.urls import reverse_lazy
 
-from django.views.generic.base import TemplateView
-from django.views.generic.base import RedirectView
-
-from occs_core.decorators import group_required
-
 from dancertix.views import *
 
 if 'cloudauth' in settings.INSTALLED_APPS:
