@@ -1,0 +1,16 @@
+Django>=2.2,<2.3
+djangorestframework>=3.10.1,<3.11
+django-bootstrap-pagination==1.7.1
+django-crispy-forms==1.7.2
+django-filter==2.2.0
+whitenoise==4.1.3
+natural-keys==1.5.1
+occs-core==0.0.4
+occs-cloudauth==0.0.7
+rds-secrets==0.1.1
+psycopg2-binary>=2.7.4
+
+# for unit testing
+pytest
+pytest-django
+pytest-mock
