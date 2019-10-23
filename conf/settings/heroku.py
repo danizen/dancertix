@@ -18,6 +18,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import sys
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -26,9 +27,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z3_r&d8dv)-q)fv(6pu*^_#3&ezh((!%xi*5x6#1x4=y!#2_89'
+SECRET_KEY = os.environ.setdefault('SECRET_KEY', 'z3_r&d8dv)-q)fv(6pu*^_#3&ezh((!%xi*5x6#1x4=y!#2_89')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -39,17 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # third party external apps
+    # third party apps
     'crispy_forms',
     'bootstrap_pagination',
     'social_django',
     'django_filters',
     'rest_framework',
-
-    # third party internal apps
-    'cloudauth',
-    'cloudauth_admin',
-    'rds_secrets.django',
 
     'dancertix',
 ]
@@ -77,17 +73,12 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'cloudauth.context_processors.sanitized_request',
-                'cloudauth.context_processors.remote_may_login',
-                'cloudauth.context_processors.user_group_names',
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'conf.wsgi.application'
-
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -154,52 +145,55 @@ CRISPY_FAIL_SILENTLY = True
 # Let the crispy-forms package know that it should use Bootstrap4 markup.
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# Tell the 'assets_static' template tag
-ASSETS_STATIC_REMOTE_PREFIX = 'https://assets.nlm.nih.gov/assets/'
-
 # Auth/Auth settings
 
 LOGIN_ERROR_URL = '/error/'
 LOGIN_REDIRECT_URL = '/'
-
-SOCIAL_AUTH_POOL_DOMAIN = 'https://login.awsint.nlm.nih.gov'
-SOCIAL_AUTH_WHITELISTED_REMOTES = ('130.14', '2607:f220:41e', '2607:f220:411')
-
-SOCIAL_AUTH_NIHLOGIN_KEY = '1l4eejjfaf8aj87r0fgdv82n38'
-SOCIAL_AUTH_NIHLOGIN_SECRET = 'p2jk964tcekrjq1f8faa6qcbf106m1d578so4to2eqhephn577v'
-
-SOCIAL_AUTH_OCCSGOOGLE_KEY = '1l4eejjfaf8aj87r0fgdv82n38'
-SOCIAL_AUTH_OCCSGOOGLE_SECRET = 'p2jk964tcekrjq1f8faa6qcbf106m1d578so4to2eqhephn577v'
-
-SOCIAL_AUTH_PIPELINE = (
-    'social_core.pipeline.social_auth.social_details',
-    'social_core.pipeline.social_auth.social_uid',
-    'cloudauth.pipeline.add_remote_ipaddr',
-    'social_core.pipeline.social_auth.auth_allowed',
-    'social_core.pipeline.social_auth.social_user',
-    'social_core.pipeline.user.get_username',
-    'cloudauth.pipeline.user_without_social_by_email',
-    'cloudauth_admin.pipeline.create_external_user',
-    'cloudauth_admin.pipeline.verify_internal_user',
-    'social_core.pipeline.social_auth.associate_user',
-    'social_core.pipeline.social_auth.load_extra_data',
-    'social_core.pipeline.user.user_details',
-)
 
 AUTHENTICATION_BACKENDS = (
     'cloudauth.backends.CognitoNIH',
     'cloudauth.backends.CognitoGoogle',
 )
 
-ADMIN_GROUP = 'Administrators'
-
 CSRF_COOKIE_HTTPONLY = True
 
 CSRF_COOKIE_SECURE = True
 
-# Add SESSION_ENGINE....
 
-# Logging
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+}
 
-LOGGING_CONFIG = 'occs_core.logging.configure_logging'
-LOGGING = {}
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
+                       'pathname=%(pathname)s lineno=%(lineno)s ' +
+                       'funcname=%(funcName)s %(message)s'),
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        }
+    },
+    'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        }
+    },
+    'loggers': {
+        'dancertix': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        }
+    }
+}
+
