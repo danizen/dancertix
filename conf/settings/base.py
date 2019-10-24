@@ -144,9 +144,9 @@ STATIC_URL = '/public/'
 STATIC_ROOT = os.path.join(BASE_DIR, "public")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-# STATICFILES_DIRS = [
-# 	# os.path.join( BASE_DIR, 'static' ),
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'vendor'),
+]
 
 
 CRISPY_FAIL_SILENTLY = True
