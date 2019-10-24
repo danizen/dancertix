@@ -27,13 +27,17 @@ if 'cloudauth' in settings.INSTALLED_APPS:
         path('accounts/', include('cloudauth_admin.pipeline_urls')),
         path('internalonly/users/', include('cloudauth_admin.admin_urls')),
         path('social/', include('social_django.urls', namespace='social')),
-        path('', HomeView.as_view(), name='home'),
+        path('', HomeCBV.as_view(), name='home'),
+        path('colors/', ColorsCBV.as_view(), name='colors'),
+        path('favorite/', FavoriteColorCBV.as_view(), name='favorite'),
     ]
 else:
     urlpatterns = [
         path('accounts/', include('authauth.urls', namespace='cloudauth')),
         path('social/', include('social_django.urls', namespace='social')),
-        path('', HomeView.as_view(), name='home'),
+        path('', HomeCBV.as_view(), name='home'),
+        path('colors/', ColorsCBV.as_view(), name='colors'),
+        path('favorite/', FavoriteColorCBV.as_view(), name='favorite'),
     ]
 
 # URLs only for debugging

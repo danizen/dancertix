@@ -6,12 +6,12 @@ header {
     border-bottom-right-radius: 1em;
 }
 
-main {
+#main {
     background-color: white;
     padding: 1em;
 }
 
-footer {
+#footer {
     background-color: #bbe;
     margin-top: 1em;
     padding: 1em;

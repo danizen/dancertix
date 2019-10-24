@@ -6,12 +6,8 @@
   <meta content="noindex,nofollow" name="robots"/>
   <meta http-equiv="X-UA_Compatible" content="IE=edge"/>
   {% block styles %}
-    <link rel="stylesheet"
-          href="{% static 'vendor/css/bootstrap.min.css' %}"/>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap-theme.min.css"
-          integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
-          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{% static 'vendor/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
   {% endblock %}
   {% block more-styles %}{% endblock %}
   <title>{% block title %}{{ project_name|title }}{% endblock %}</title>
