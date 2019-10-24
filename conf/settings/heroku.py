@@ -153,9 +153,15 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_ERROR_URL = '/error/'
 LOGIN_REDIRECT_URL = '/'
 
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '732432786027-ge827i3fsve0770ralb3da4r0fd0ujgh.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ['GOOGLE_SECRET']
+
+SOCIAL_AUTH_FACEBOOK_KEY = '2439175149739054'
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['FACEBOOK_SECRET']
+
 AUTHENTICATION_BACKENDS = (
-    'cloudauth.backends.CognitoNIH',
-    'cloudauth.backends.CognitoGoogle',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
 )
 
 CSRF_COOKIE_HTTPONLY = True
