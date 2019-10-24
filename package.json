@@ -4,6 +4,8 @@
   "description": "A web application to manage reservations of tickets to be purchased for dancers in young companies.",
   "main": "manage.py",
   "scripts": {
+    "build": "node_modules/.bin/gulp build",
+    "clean": "node_modules/.bin/gulp clean",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,7 +14,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/danizen/dancertix/issues"
   },

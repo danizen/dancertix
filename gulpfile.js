@@ -29,6 +29,7 @@ gulp.task('clean', function() {
 	return del([
 		'vendor/**/*.js',
 		'vendor/**/*.css',
+		'vendor/**/*.map',
 	]);
 
 });
