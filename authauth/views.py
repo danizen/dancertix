@@ -10,7 +10,7 @@ class MyLoginView(TemplateView):
 
 
 class MyLogoutView(LogoutView):
-	pass
+	template_name = 'authauth/logout.html'
 
 
 @method_decorator(login_required, name='dispatch')
