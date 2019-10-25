@@ -96,6 +96,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# Artifacts
+dancertix.tgz
+
 # PyCharm
 .idea/
 
