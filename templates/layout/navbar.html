@@ -10,7 +10,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="userNav" data-toggle="dropdown"
          role="button" aria-haspopup="true" aria-expanded="false">
-        {{ request.user.email }}
+        {{ request.user.username }}
       </a>
       <div class="dropdown-menu" aria-labelledby="userNav">
         <a class="dropdown-item" href="{% url 'cloudauth:logout' %}">Sign out</a>
