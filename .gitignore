@@ -98,6 +98,8 @@ venv.bak/
 
 # Artifacts
 dancertix.tgz
+dancertix.tar.gz
+*.csv
 
 # PyCharm
 .idea/
