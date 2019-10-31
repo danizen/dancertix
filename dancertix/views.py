@@ -1,3 +1,4 @@
+import logging
 from django.utils import timezone
 from django.views.generic import FormView, TemplateView
 from django.views.generic.list import ListView
@@ -10,6 +11,8 @@ __all__ = (
     'ColorsCBV',
     'FavoriteColorCBV'
 )
+
+LOG = logging.getLogger(__name__)
 
 
 class ColorsCBV(TemplateView):
@@ -24,6 +27,10 @@ class ColorsCBV(TemplateView):
         })
         return kwargs
 
+    def get(self, request, *args, **kwargs):
+        LOG.info('colors get')
+        return super().get(request, *args, **kwargs)
+
 
 class HomeCBV(ListView):
     """
@@ -34,6 +41,10 @@ class HomeCBV(ListView):
 
     def get_queryset(self):
         return Performance.objects.filter(start_time__gt=timezone.now()).order_by('title', 'start_time')
+
+    def get(self, request, *args, **kwargs):
+        LOG.info('home get')
+        return super().get(request, *args, **kwargs)
 
 
 class FavoriteColorCBV(FormView):
@@ -57,3 +68,11 @@ class FavoriteColorCBV(FormView):
 
     def form_invalid(self, form):
         return super().form_invalid(form)
+
+    def get(self, request, *args, **kwargs):
+        LOG.info('favorite get')
+        return super().get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        LOG.info('favorite post')
+        return super().post(request, *args, **kwargs)

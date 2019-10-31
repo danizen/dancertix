@@ -7,16 +7,18 @@ import logging
 
 from occs_core.utils import check_remote_may_login
 
-LOGGER = logging.getLogger(__name__)
+LOG = logging.getLogger(__name__)
 
 
 class HealthCheckPingView(View):
     def get(self, request):
+        LOG.info('health check ping')
         return HttpResponse('Status: OK')
 
 
 class HealthCheckDatabaseView(View):
     def get(self, request):
+        LOG.info('health check db ping')
         try:
             get_user_model().objects.count()
         except:
