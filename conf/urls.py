@@ -26,6 +26,7 @@ if 'cloudauth' in settings.INSTALLED_APPS:
         path('accounts/', include('cloudauth.urls')),
         path('accounts/', include('cloudauth_admin.pipeline_urls')),
         path('internalonly/users/', include('cloudauth_admin.admin_urls')),
+        path('infrastructure/', include('infrastructure.urls')),
         path('social/', include('social_django.urls', namespace='social')),
         path('', HomeCBV.as_view(), name='home'),
         path('colors/', ColorsCBV.as_view(), name='colors'),
@@ -34,6 +35,7 @@ if 'cloudauth' in settings.INSTALLED_APPS:
 else:
     urlpatterns = [
         path('accounts/', include('authauth.urls', namespace='cloudauth')),
+        path('infrastructure/', include('infrastructure.urls')),
         path('social/', include('social_django.urls', namespace='social')),
         path('', HomeCBV.as_view(), name='home'),
         path('colors/', ColorsCBV.as_view(), name='colors'),
