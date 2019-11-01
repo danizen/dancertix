@@ -19,6 +19,10 @@ header {
     border-top-right-radius: 1em;
 }
 
+.maincard {
+    min-width: 20rem;
+}
+
 .error {
     color: FireBrick;
 }

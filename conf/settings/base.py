@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z3_r&d8dv)-q)fv(6pu*^_#3&ezh((!%xi*5x6#1x4=y!#2_89'
+SECRET_KEY = os.environ.setdefault('SECRET_KEY', 'z3_r&d8dv)-q)fv(6pu*^_#3&ezh((!%xi*5x6#1x4=y!#2_89')
 
 ALLOWED_HOSTS = []
 
@@ -163,14 +163,19 @@ ASSETS_STATIC_REMOTE_PREFIX = 'https://assets.nlm.nih.gov/assets/'
 LOGIN_ERROR_URL = '/error/'
 LOGIN_REDIRECT_URL = '/'
 
-SOCIAL_AUTH_POOL_DOMAIN = 'https://login.awsint.nlm.nih.gov'
+
+__domain = os.environ.setdefault('COGNITO_DOMAIN', 'login.awsint.nlm.nih.gov')
+__key = os.environ.setdefault('COGNITO_KEY', '1l4eejjfaf8aj87r0fgdv82n38')
+__secret = os.environ.setdefault('COGNITO_SECRET', 'p2jk964tcekrjq1f8faa6qcbf106m1d578so4to2eqhephn577v')
+
+SOCIAL_AUTH_POOL_DOMAIN = 'https://' + __domain
 SOCIAL_AUTH_WHITELISTED_REMOTES = ('130.14', '2607:f220:41e', '2607:f220:411')
 
-SOCIAL_AUTH_NIHLOGIN_KEY = '1l4eejjfaf8aj87r0fgdv82n38'
-SOCIAL_AUTH_NIHLOGIN_SECRET = 'p2jk964tcekrjq1f8faa6qcbf106m1d578so4to2eqhephn577v'
+SOCIAL_AUTH_NIHLOGIN_KEY = __key
+SOCIAL_AUTH_NIHLOGIN_SECRET = __secret
 
-SOCIAL_AUTH_OCCSGOOGLE_KEY = '1l4eejjfaf8aj87r0fgdv82n38'
-SOCIAL_AUTH_OCCSGOOGLE_SECRET = 'p2jk964tcekrjq1f8faa6qcbf106m1d578so4to2eqhephn577v'
+SOCIAL_AUTH_OCCSGOOGLE_KEY = __key
+SOCIAL_AUTH_OCCSGOOGLE_SECRET = __secret
 
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
