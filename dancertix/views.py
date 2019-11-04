@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.views.generic import FormView, TemplateView
 from django.views.generic.list import ListView
 
-from .models import Performance
+from .models import Performance, Dancer, Reservation
 from .forms import ColorForm, color_names
 
 __all__ = (
@@ -32,15 +32,34 @@ class ColorsCBV(TemplateView):
         return super().get(request, *args, **kwargs)
 
 
-class HomeCBV(ListView):
+class HomeCBV(TemplateView):
     """
     The home view reads some data out of the database, but doesn't require login or settings
     """
     template_name = 'dancertix/index.html'
     model = Performance
 
-    def get_queryset(self):
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'performance_list': self.get_performances(),
+            'dancer_list': self.get_dancers(),
+            'reservation_list': self.get_reservations()
+        })
+        return context
+
+    def get_performances(self):
         return Performance.objects.filter(start_time__gt=timezone.now()).order_by('title', 'start_time')
+
+    def get_dancers(self):
+        return Dancer.objects.only('display_name').order_by('display_name')
+
+    def get_reservations(self):
+        if self.request.user.is_authenticated:
+            queryset = Reservation.objects.filter(owner=self.request.user)
+        else:
+            queryset = Reservation.objects.none()
+        return queryset
 
     def get(self, request, *args, **kwargs):
         LOG.info('home get')
