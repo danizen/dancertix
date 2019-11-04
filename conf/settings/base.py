@@ -57,7 +57,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'rds_secrets.django.middleware.SecretsManagerMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -211,11 +210,6 @@ LOGGING = {
             'propagate': True,
         },
         'dancertix': {
-            'handlers': ['file', 'console'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-        'rds_secrets': {
             'handlers': ['file', 'console'],
             'level': 'INFO',
             'propagate': True,

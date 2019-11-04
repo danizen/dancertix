@@ -9,6 +9,9 @@ ALLOWED_HOSTS = ['*']
 __secret_id = os.environ.setdefault('DJANGO_SECRET', 'django-test-dancertix-app')
 
 DATABASES = {
-    'default': SecretsManagerDBConfig(secret_id=__secret_id)
+    'default': {
+        'ENGINE': 'rds_secrets.django.backends.postgresql',
+        'SECRET': __secret_id,
+    }
 }
 
