@@ -21,6 +21,7 @@ DATABASES = {
     }
 }
 
+SOCIAL_AUTH_VERIFY_SSL = False
 
 # The next two overrides presume you're using manage.py runserver, which uses HTTP.
 # On the servers, HTTPS is required.
