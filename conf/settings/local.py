@@ -1,4 +1,3 @@
-from rds_secrets.django import SecretsManagerDBConfig
 from .base import *
 
 # Debug Toolbar needs these

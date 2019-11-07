@@ -222,8 +222,13 @@ LOGGING = {
     }
 }
 
+# For debugging rds_secrets
 if os.environ.get('DEBUG_RDS_SECRETS', 'no').lower() in {'1', 'true', 'yes'}:
-    LOGGING.extra_loggers['rds_secrets'] = {
+    BOTO_KWARGS = {
+        'region_name': 'us-east-1'
+    }
+    RDS_CACHE_TIMEOUT = 15.0
+    LOGGING['extra_loggers']['rds_secrets'] = {
         'handlers': ['file', 'console'],
         'level': 'DEBUG',
         'propagate': True,
