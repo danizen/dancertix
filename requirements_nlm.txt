@@ -1,5 +1,5 @@
 -r requirements_base.txt
 
-occs-core==0.0.5
+occs-core==0.0.6
 occs-cloudauth==0.0.8
-rds-secrets==0.2.1
+rds-secrets==0.2.2
