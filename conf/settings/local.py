@@ -12,12 +12,14 @@ DEBUG = True
 
 # Modify the following sections to use the appropriate secret name.
 __secret_id = os.environ.setdefault('DJANGO_DB_SECRET', 'django-test-dancertix-app')
+__port = int(os.environ.setdefault('DJANGO_DB_PORT', '5432'))
 
 DATABASES = {
     'default': {
         'ENGINE': 'rds_secrets.django.backends.postgresql',
         'SECRET': __secret_id,
         'HOST': 'localhost',
+        'PORT': __port,
     }
 }
 
