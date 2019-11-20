@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A web application to manage reservations of tickets to be purchased for dancers in young companies.",
   "main": "manage.py",
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.13.1"
+  },
   "scripts": {
     "build": "node_modules/.bin/gulp build",
     "clean": "node_modules/.bin/gulp clean",
