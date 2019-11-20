@@ -82,8 +82,6 @@ class FavoriteColorCBV(FormView):
         return kwargs
 
     def form_valid(self, form):
-        if form.cleaned_data['color'] == 'yellow':
-            LOG.error('yellow is an awful favorite color!')
         self.request.session['color'] = form.cleaned_data['color']
         return super().form_valid(form)
 
