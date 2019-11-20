@@ -19,3 +19,7 @@ Then, you will be able to promote the code in the sandbox as follows:
 git tarball
 git upload
 ```
+
+## Heroku
+
+On heroku, this application is deployed using both the python buildpack and the nodejs buildpack
