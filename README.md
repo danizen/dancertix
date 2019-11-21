@@ -22,4 +22,5 @@ git upload
 
 ## Heroku
 
-On heroku, this application is deployed using both the python buildpack and the nodejs buildpack
+On heroku, this application is deployed using both the nodejs buildpack and the python buildpack.
+You may need to modify some file to redeploy.
