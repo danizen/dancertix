@@ -195,7 +195,6 @@ DATABASES = {
 
 
 LOG_REQUEST_ID_HEADER = 'HTTP_X_REQUEST_ID'
-LOG_REQUESTS = True
 
 __log_level = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
 
@@ -209,7 +208,7 @@ LOGGING = {
     },
     'formatters': {
         'standard': {
-            'format': 'request_id=%(request_id)s level=%(levelname)s %(name)s %(message)s',
+            'format': '%(request_id)s [%(levelname)s] %(name)s %(message)s',
         },
     },
     'handlers': {
