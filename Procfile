@@ -1,2 +1,2 @@
-web: gunicorn --access-logfile - -w 3 --threads 5 conf.wsgi --preload
+web: gunicorn --config gunicorn_config.py conf.wsgi
 release: python manage.py migrate
