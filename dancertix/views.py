@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import subprocess
 from django.utils import timezone
 from django.views.generic import FormView, TemplateView
 from django.views.generic.list import ListView
@@ -103,19 +104,18 @@ class FavoriteColorCBV(FormView):
 class DeployInfoCBV(TemplateView):
     template_name = 'dancertix/deploy.html'
 
-    def get_context_data(self, **kwargs):
+    def get_pip_info(self):
         try:
-            with open('pip-info.json') as f:
-                pipinfo = json.load(f)
-        except FileNotFoundError:
-            pipinfo = {}
-        except json.JSONDecodeError:
-            pipinfo = {}
+            info_bytes = subprocess.check_output(['pip','list', '--format', 'json'])
+            pipinfo = json.loads(info_bytes)
+        except subprocess.CalledProcessError:
+            pipinfo = []
+        return pipinfo
 
+    def get_context_data(self, **kwargs):
         kwargs.update({
             'info': {
-                'pip': pipinfo,
-                'env': os.environ,
+                'pip': self.get_pip_info,
                 'headers': dict((k, v) for k, v in self.request.META.items() if k.startswith('HTTP'))
             }
         })
