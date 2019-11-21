@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'request_id.middleware.RequestIdMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -193,21 +194,23 @@ DATABASES = {
 }
 
 
+LOG_REQUEST_ID_HEADER = 'HTTP_X_REQUEST_ID'
+LOG_REQUESTS = True
+
 __log_level = os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
-                       'pathname=%(pathname)s lineno=%(lineno)s ' +
-                       'funcname=%(funcName)s %(message)s'),
-            'datefmt': '%Y-%m-%d %H:%M:%S'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
+    'filters': {
+        'request_id': {
+            '()': 'request_id.logging.RequestIdFilter'
         }
+    },
+    'formatters': {
+        'standard': {
+            'format': 'request_id=%(request_id)s level=%(levelname)s %(name)s %(message)s',
+        },
     },
     'handlers': {
         'null': {
@@ -217,7 +220,8 @@ LOGGING = {
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
+            'filters': ['request_id'],
+            'formatter': 'standard'
         }
     },
     'loggers': {
