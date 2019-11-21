@@ -39,6 +39,7 @@ else:
         path('', HomeCBV.as_view(), name='home'),
         path('colors/', ColorsCBV.as_view(), name='colors'),
         path('favorite/', FavoriteColorCBV.as_view(), name='favorite'),
+        path('info/', DeployInfoCBV.as_view(), name='info'),
     ]
 
 # URLs only for debugging

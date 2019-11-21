@@ -1,0 +1,70 @@
+{% extends 'layout/layout.html' %}
+
+{% block title %}Dancertix | Deployment{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Python Packages
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <dl class="row">
+                {% for package in info.pip %}
+                    <dt class="col-md-3">{{ package.name }}</dt>
+                    <dd class="col-md-9">{{ package.version }}</dd>
+                {% endfor %}
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Request Headers
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <dl class="row">
+                {% for k, v in info.headers.items %}
+                    <dt class="col-md-3">{{ k }}</dt>
+                    <dd class="col-md-9">{{ v }}</dd>
+                {% endfor %}
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Environment Variables
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            <dl class="row">
+                {% for k, v in info.env.items %}
+                    <dt class="col-md-3">{{ k }}</dt>
+                    <dd class="col-md-9">{{ v }}</dd>
+                {% endfor %}
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,4 +1,6 @@
+import json
 import logging
+import os
 from django.utils import timezone
 from django.views.generic import FormView, TemplateView
 from django.views.generic.list import ListView
@@ -9,7 +11,8 @@ from .forms import ColorForm, color_names
 __all__ = (
     'HomeCBV',
     'ColorsCBV',
-    'FavoriteColorCBV'
+    'FavoriteColorCBV',
+    'DeployInfoCBV',
 )
 
 LOG = logging.getLogger(__name__)
@@ -95,3 +98,25 @@ class FavoriteColorCBV(FormView):
     def post(self, request, *args, **kwargs):
         LOG.info('favorite post')
         return super().post(request, *args, **kwargs)
+
+
+class DeployInfoCBV(TemplateView):
+    template_name = 'dancertix/deploy.html'
+
+    def get_context_data(self, **kwargs):
+        try:
+            with open('pip-info.json') as f:
+                pipinfo = json.load(f)
+        except FileNotFoundError:
+            pipinfo = {}
+        except json.JSONDecodeError:
+            pipinfo = {}
+
+        kwargs.update({
+            'info': {
+                'pip': pipinfo,
+                'env': os.environ,
+                'headers': dict((k, v) for k, v in self.request.META.items() if k.startswith('HTTP'))
+            }
+        })
+        return super().get_context_data(**kwargs)
