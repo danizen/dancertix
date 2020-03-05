@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 # This file contains only the settings that will remain the same through
 # the software development cycle. Settings that change from stage to
 # stage in development are pulled out into dev_sqlite3.py, dev_oracle.py,
-# integration.py, cloud.py, and cloud.py. Each of those files will import
+# integration.py, aws.py, and aws.py. Each of those files will import
 # this one.
 
 import os
