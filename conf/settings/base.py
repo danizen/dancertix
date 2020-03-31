@@ -193,7 +193,6 @@ SOCIAL_AUTH_PIPELINE = (
 
 AUTHENTICATION_BACKENDS = (
     'cloudauth.backends.CognitoNIH',
-    'cloudauth.backends.CognitoGoogle',
 )
 
 ADMIN_GROUP = 'Administrators'
