@@ -208,18 +208,7 @@ CSRF_COOKIE_SECURE = True
 
 LOGGING_CONFIG = 'occs_core.logging.configure_logging'
 LOGGING = {
-    'extra_loggers': {
-        'infrastructure': {
-            'handlers': ['file', 'console'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-        'dancertix': {
-            'handlers': ['file', 'console'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-    }
+    'extra_loggers': ['infrastructure', 'dancertix']
 }
 
 # For debugging rds_secrets
