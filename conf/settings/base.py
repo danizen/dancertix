@@ -162,19 +162,10 @@ ASSETS_STATIC_REMOTE_PREFIX = 'https://assets.nlm.nih.gov/assets/'
 LOGIN_ERROR_URL = '/error/'
 LOGIN_REDIRECT_URL = '/'
 
-
 __domain = os.environ.setdefault('COGNITO_DOMAIN', 'login.awsint.nlm.nih.gov')
-__key = os.environ.setdefault('COGNITO_KEY', '1l4eejjfaf8aj87r0fgdv82n38')
-__secret = os.environ.setdefault('COGNITO_SECRET', 'p2jk964tcekrjq1f8faa6qcbf106m1d578so4to2eqhephn577v')
 
 SOCIAL_AUTH_POOL_DOMAIN = 'https://' + __domain
 SOCIAL_AUTH_WHITELISTED_REMOTES = ('130.14', '2607:f220:41e', '2607:f220:411')
-
-SOCIAL_AUTH_NIHLOGIN_KEY = __key
-SOCIAL_AUTH_NIHLOGIN_SECRET = __secret
-
-SOCIAL_AUTH_OCCSGOOGLE_KEY = __key
-SOCIAL_AUTH_OCCSGOOGLE_SECRET = __secret
 
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
@@ -183,7 +174,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.auth_allowed',
     'social_core.pipeline.social_auth.social_user',
     'social_core.pipeline.user.get_username',
-    'cloudauth.pipeline.user_without_social_by_email',
+    'cloudauth.pipeline.nihuser_by_username',
     'cloudauth_admin.pipeline.create_external_user',
     'cloudauth_admin.pipeline.verify_internal_user',
     'social_core.pipeline.social_auth.associate_user',

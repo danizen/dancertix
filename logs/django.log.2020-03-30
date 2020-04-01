@@ -1,0 +1,1298 @@
+[2020-03-30 22:14:37,280] 43604 INFO django.utils.autoreload Watching for file changes with StatReloader
+[2020-03-30 22:15:02,270] 43604 INFO django.utils.autoreload /Users/davisda4/Documents/code/dancertix/conf/settings/base.py changed, reloading.
+[2020-03-30 22:15:03,299] 43620 INFO django.utils.autoreload Watching for file changes with StatReloader
+[2020-03-30 22:15:30,731] 43643 INFO django.utils.autoreload Watching for file changes with StatReloader
+[2020-03-30 22:16:29,319] 43656 INFO django.utils.autoreload Watching for file changes with StatReloader
+[2020-03-30 22:21:41,956] 43723 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 22:52:40,676] 47677 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 22:53:25,184] 47696 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:01:16,689] 48205 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:01:17,009] 48205 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:15:58,891] 50671 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:15:59,191] 50671 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:16:41,472] 50675 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:16:41,724] 50675 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:18:29,409] 50720 INFO django.utils.autoreload Watching for file changes with StatReloader
+[2020-03-30 23:19:04,749] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:05,027] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:05,381] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:05,780] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:08,244] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:08,489] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:08,752] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:09,235] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:26,301] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:26,531] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:26,888] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:27,138] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:27,560] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:27,901] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:28,224] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:28,457] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:28,868] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:29,107] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:29,402] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:29,628] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:30,005] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:30,318] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:30,587] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:30,858] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:31,873] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:32,120] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:32,377] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:32,624] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:32,992] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:33,213] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:33,467] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:33,686] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:37,023] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:37,262] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:37,560] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:37,785] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:38,124] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:38,394] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:38,668] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:38,886] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:39,246] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:39,476] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:39,770] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:40,036] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:40,416] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:40,649] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:41,019] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:41,299] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:41,760] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:42,214] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:42,488] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:42,704] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:45,132] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:45,384] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:45,676] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:45,971] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:55,962] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:58,141] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:58,473] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:58,891] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:19:59,421] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:19:59,678] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:00,020] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:00,407] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:26,137] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:26,420] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:26,677] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:26,894] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:28,192] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:28,433] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:28,716] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:28,973] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:29,341] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:29,662] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:29,946] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:30,233] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:30,624] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:30,893] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:31,177] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:31,405] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:31,880] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:32,104] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:32,350] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:32,594] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:33,643] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:33,946] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:34,239] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:34,512] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:35,095] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:35,384] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:35,622] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:36,959] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:37,422] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:37,724] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
+[2020-03-30 23:20:38,197] 50720 WARNING rds_secrets.proxy secret %s, stage %s: error reading value
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/django/backends/postgresql/base.py", line 60, in get_new_connection
+    return super().get_new_connection(conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/psycopg2/__init__.py", line 126, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: FATAL:  password authentication failed for user "app"
+FATAL:  no pg_hba.conf entry for host "10.0.0.75", user "app", database "dancertix", SSL off
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/rds_secrets/proxy.py", line 48, in get_value
+    response = self.client.get_secret_value(SecretId=self.secret_id, VersionStage=stage.value)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/Users/davisda4/.virtualenv/dancertix/lib/python3.6/site-packages/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetSecretValue operation: Secrets Manager can't find the specified secret value for staging label: AWSPENDING
+[2020-03-30 23:20:38,445] 50720 WARNING rds_secrets.django.backends.postgresql.base secret django-test-dancertix-app, stage AWSCURRENT: error
