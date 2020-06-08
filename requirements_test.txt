@@ -1,0 +1,9 @@
+-r requirements_base.txt
+
+# for unit testing
+model-bakery
+faker
+pytest
+pytest-django
+pytest-mock
+pytest-cov

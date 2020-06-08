@@ -10,7 +10,7 @@
 -->
 <project name="scheduled-url" default="build">
 
-    <property name="target.file" value="scheduled-url-lambda.zip"/>
+    <property name="target.file" value="dancertix-lambda.zip"/>
     <property name="include.deps" value="true"/>
     <property name="deps.file" value="requirements.txt"/>
     <property name="bucket.name" value="nlm-sbox-ab-django-app-djangotest-artifacts-us-east-1"/>
@@ -81,19 +81,11 @@
             <arg value="dist" />
             <arg value="-r" />
             <arg value="${deps.file}" />
-        </exec>
-        <fileset dir="${basedir}/dist" id="dist.binaries">
-            <include name="**/*.pyd"/>
-            <include name="**/*.so"/>
-        </fileset>
-        <pathconvert
-            refid="dist.binaries"
-            property="dist.hasBinaryFiles"
-            pathsep=", "
-            setonempty="false"/>
-        <fail
-            message="dist contains binary files"
-            if="dist.hasBinaryFiles"/>        
+            <arg value="--platform" />
+            <arg value="manylinux1_x86_64" />
+            <arg value="--only-binary" />
+            <arg value=":all:" />
+        </exec>   
     </target>
 
     <target name="package" depends="pip"
