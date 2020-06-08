@@ -1,0 +1,164 @@
+#
+# This template creates a Lambda associated with a CloudWatch Event Rule.
+#
+---
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: A Lambda that hits an URL based on a scheduled event
+
+Parameters:
+
+  # Boilerplate parameters that have nothing to do with the function, and everything to do with standards
+  # The resource section uses these to import the following meta-parameters:
+  pAwsAccount:
+    Description: Account Name (NLM-PROD, NLM-QA, NLM-INT, NLM-SEC, etc.)
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /standard/pAwsAccount
+
+  pAwsAccountLc:
+    Description: Account name in lower case (nlm-int, nlm-qa, nlm-prod, etc.)
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /standard/pAwsAccountLc
+
+  pVpcName:
+    Description: Application VPC short name
+    Type: String
+    MinLength: 3
+    MaxLength: 20
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9-_]*'
+
+  pAppName:
+    Description: Application Name
+    Type: String
+    MinLength: 3
+    MaxLength: 20
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9-_]*'
+
+  pAudience:
+    Description: Audience for the Application
+    Type: String
+    AllowedValues:
+      - External
+      - Public
+      - Internal
+      - NIH-wide
+
+  pItsmServiceName:
+    Description: ITSM Service Name
+    Type: String
+
+  # Parameters allowing the CloudFormation template to be run both in sandbox and other accounts
+  pSecurityGroupExportSuffix:
+    Description: A parameter to make this template more modular and testable
+    Type: String
+    Default: cronurl-sg
+
+  pRoleArnExportSuffix:
+    Description: A parameter to make this template more modular and testable
+    Type: String
+    Default: cronurl-role-arn
+
+  pLambdaSubnetExportInfix:
+    Description: A parameter to make this template more modular and testable
+    Type: String
+    Default: lambda-subnet
+
+  # Parameters that just have to do with the operation of this function
+  pAppFunction:
+    Description: Application Function
+    Type: String
+    Default: cron
+
+  pUrl:
+    Description: The URL to be hit
+    Type: String
+
+  pSchedule:
+    Description: The expression for the CloudWatch Event
+    Type: String
+
+  pConnTimeout:
+    Description: The socket connection timeout in seconds
+    Type: Number
+    Default: 5
+    MinValue: 1
+    MaxValue: 60
+
+  pReadTimeout:
+    Description: The socket read timeout in seconds
+    Type: Number
+    Default: 5
+    MinValue: 1
+    MaxValue: 60
+
+  pVerifyCerts:
+    Description: Whether the server certificate of the URL should be verified
+    Type: String
+    Default: True
+    AllowedValues:
+      - True
+      - False
+      - Yes
+      - No
+      - 1
+      - 0
+
+  pCodeBucket:
+    Description: Bucket which will contain the code
+    Type: String
+
+  pCodeKey:
+    Description: Key in the bucket with the code
+    Type: String
+
+
+Resources:
+
+  rLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Scheduled URL Lambda function
+      CodeUri:
+        Bucket: !Ref pCodeBucket
+        Key: !Ref pCodeKey
+      FunctionName: !Sub ${pAwsAccountLc}-${pAppName}-${pAppFunction}-${AWS::Region}
+      Events:
+        PingScheduledUrls:
+          Type: Schedule
+          Properties:
+            Schedule: !Ref pSchedule
+      Environment:
+        Variables:
+          URL: !Ref pUrl
+          CONN_TIMEOUT: !Ref pConnTimeout
+          READ_TIMEOUT: !Ref pReadTimeout
+          VERIFY_CERTS: !Ref pVerifyCerts
+      Handler: sched_url.handlers.handler
+      MemorySize: 256
+      Role: !ImportValue
+        Fn::Sub: ${pAwsAccount}-${pRoleArnExportSuffix}
+      Runtime: python3.6
+      Timeout: 180
+      VpcConfig:
+        SecurityGroupIds: 
+           - !ImportValue
+             Fn::Sub: ${pAwsAccount}-${pVpcName}-${pSecurityGroupExportSuffix}
+        SubnetIds: 
+           - !ImportValue 
+             Fn::Sub: ${pAwsAccount}-${pVpcName}-${pLambdaSubnetExportInfix}-a
+           - !ImportValue 
+             Fn::Sub: ${pAwsAccount}-${pVpcName}-${pLambdaSubnetExportInfix}-b
+           - !ImportValue 
+             Fn::Sub: ${pAwsAccount}-${pVpcName}-${pLambdaSubnetExportInfix}-c
+      Tags:
+        Name: !Sub ${pAwsAccountLc}-${pAppName}-${pAppFunction}-${AWS::Region}
+        Application: !Ref pAppName
+        AWS Account: !Ref pAwsAccount
+        AWS-Account: !Ref pAwsAccount
+        AWS Region: !Sub ${AWS::Region}
+        Audience: !Ref pAudience
+        ITSM Service Name: !Ref pItsmServiceName
+        NIH IT Budget Category: 'MAINFRAME AND SERVERS'
+        NLM Budget Category: 'ENTERPRISE COMPUTING AND STORAGE'
+        Compliance System: ACE
+        TBM IT Tower: Compute

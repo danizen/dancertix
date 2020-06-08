@@ -27,5 +27,5 @@ os.environ['DJANGO_SETTINGS_MODULE'] = deploy['settings']
 if 'secret' in deploy:
     os.environ['DJANGO_DB_SECRET'] = deploy['secret']
 
-import conf.wsgi
+import conf.wsgi     # noqa
 application = conf.wsgi.application

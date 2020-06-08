@@ -60,7 +60,9 @@ class Migration(migrations.Migration):
                 ('num_tickets', models.IntegerField()),
                 ('dancer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dancertix.Dancer')),
                 ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
-                ('performance', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dancertix.Performance')),
+                ('performance', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE,
+                    to='dancertix.Performance')),
             ],
             options={
                 'db_table': 'reservations',

@@ -1,0 +1,77 @@
+#
+# This template creates a Role for the lambda and the needed Security Group.
+#
+---
+AWSTemplateFormatVersion: 2010-09-09
+Description: A role and security group to test the Lambda also in this directory
+
+Parameters:
+  # Boilerplate parameters that have nothing to do with the function, and everything to do with standards
+  # The resource section uses these to import the following meta-parameters:
+  pAwsAccount:
+    Description: Account Name (NLM-PROD, NLM-QA, NLM-INT, NLM-SEC, etc.)
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /standard/pAwsAccount
+
+  pVpcName:
+    Description: Application VPC short name
+    Type: String
+    MinLength: 3
+    MaxLength: 20
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9-_]*'
+
+  pAppName:
+    Description: Application Name
+    Type: String
+    MinLength: 3
+    MaxLength: 20
+    AllowedPattern: '[a-zA-Z][a-zA-Z0-9-_]*'
+
+Resources:
+  rSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: !Sub "${pAwsAccount}-${pVpcName}-${pAppName}-lambda-sg"
+      GroupDescription: "Security Group for scheduled-url Lambda function"
+      VpcId: !ImportValue
+        Fn::Sub: ${pAwsAccount}-${pVpcName}
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          FromPort: 443
+          ToPort: 443
+          IpProtocol: tcp
+          Description: Outgoing IPv4 https connections
+        - CidrIpv6: ::0/0
+          FromPort: 443
+          ToPort: 443
+          IpProtocol: tcp
+          Description: Outgoint IPv6 https connections
+      Tags:
+        - Key: Name
+          Value: !Sub "${pAppName}-lambda-sg"
+
+  rRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub "${pAwsAccount}-${pAppName}-role"
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action: sts:AssumeRole
+            Principal:
+              Service: lambda.amazonaws.com
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
+
+Outputs:
+  oSecurityGroup:
+    Value: !Ref rSecurityGroup
+    Export:
+      Name: !Sub "${pAwsAccount}-${pVpcName}-${pAppName}-sg"
+  oRole:
+    Value: !Sub "${pAwsAccount}-${pAppName}-role"
+  oRoleArn:
+    Value: !GetAtt rRole.Arn
+    Export:
+      Name: !Sub "${pAwsAccount}-${pAppName}-role-arn"

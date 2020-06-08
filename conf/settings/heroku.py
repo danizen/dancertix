@@ -17,7 +17,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 # this one.
 
 import os
-import sys
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -68,7 +67,7 @@ ROOT_URLCONF = 'conf.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(BASE_DIR, 'templates'), ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,7 +139,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "public")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 STATICFILES_DIRS = [
-	os.path.join(BASE_DIR, 'vendor'),
+    os.path.join(BASE_DIR, 'vendor'),
 ]
 
 
@@ -175,8 +174,8 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
-  'locale': 'en_US',
-  'fields': 'id, name, email'
+    'locale': 'en_US',
+    'fields': 'id, name, email'
 }
 
 AUTHENTICATION_BACKENDS = (
@@ -236,4 +235,3 @@ LOGGING = {
         }
     }
 }
-

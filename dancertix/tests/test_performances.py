@@ -2,6 +2,7 @@ from django.test import TestCase
 
 from dancertix.models import Performance
 
+
 class TestPerformances(TestCase):
 
     def test_performances(self):

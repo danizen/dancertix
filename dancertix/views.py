@@ -1,10 +1,8 @@
 import json
 import logging
-import os
 import subprocess
 from django.utils import timezone
 from django.views.generic import FormView, TemplateView
-from django.views.generic.list import ListView
 
 from .models import Performance, Dancer, Reservation
 from .forms import ColorForm, color_names
@@ -106,7 +104,7 @@ class DeployInfoCBV(TemplateView):
 
     def get_pip_info(self):
         try:
-            info_bytes = subprocess.check_output(['pip','list', '--format', 'json'])
+            info_bytes = subprocess.check_output(['pip', 'list', '--format', 'json'])
             pipinfo = json.loads(info_bytes)
         except subprocess.CalledProcessError:
             pipinfo = []

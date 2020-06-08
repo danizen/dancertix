@@ -3,16 +3,15 @@ from django.contrib.auth.views import LogoutView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
-# Create your views here.
 
 class MyLoginView(TemplateView):
-	template_name = 'authauth/login.html'
+    template_name = 'authauth/login.html'
 
 
 class MyLogoutView(LogoutView):
-	template_name = 'authauth/logout.html'
+    template_name = 'authauth/logout.html'
 
 
 @method_decorator(login_required, name='dispatch')
 class MyProfileView(TemplateView):
-	template_name = 'authauth/profile.html'
+    template_name = 'authauth/profile.html'

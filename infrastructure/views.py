@@ -28,8 +28,8 @@ class HealthCheckDatabaseView(View):
         return HttpResponse('Status: OK')
 
 
-class CleanSessionsView( View ):
-    def get( self, request, *args, **kwargs ):
+class CleanSessionsView(View):
+    def get(self, request, *args, **kwargs):
         if settings.CHECK_ADMIN_IPS and not check_remote_may_login(request):
             return HttpResponseRedirect('/')
 
@@ -48,7 +48,7 @@ class CleanSessionsView( View ):
                 call_command('cleanpartials')
             except:
                 LOG.exception('cleanpartials')
-                response = HttpResponse( 'Status: clearpartials management command failed' )
+                response = HttpResponse('Status: clearpartials management command failed')
                 response.status_code = 503
                 return response
 

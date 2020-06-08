@@ -13,4 +13,3 @@ DATABASES = {
         'SECRET': __secret_id,
     }
 }
-
