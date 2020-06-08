@@ -195,8 +195,14 @@ CSRF_COOKIE_SECURE = True
 
 # Logging
 
-LOGGING_CONFIG = 'occs_core.logging.configure_logging'
 LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'full': {
+            'format': '[%(asctime)s] %(process)d %(levelname)s %(name)s %(message)s'
+        }
+    }
     'extra_loggers': ['infrastructure', 'dancertix']
 }
 
