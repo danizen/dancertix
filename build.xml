@@ -12,7 +12,7 @@
 
     <property name="target.file" value="dancertix-lambda.zip"/>
     <property name="include.deps" value="true"/>
-    <property name="deps.file" value="requirements.txt"/>
+    <property name="deps.file" value="requirements_nlm.txt"/>
     <property name="bucket.name" value="nlm-sbox-ab-django-app-djangotest-artifacts-us-east-1"/>
     <property name="bucket.prefix" value="lambdas/"/>
     <property name="bucket.path" value="s3://${bucket.name}/${bucket.prefix}${target.file}"/>

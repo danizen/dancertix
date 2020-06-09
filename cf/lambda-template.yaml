@@ -133,7 +133,8 @@ Resources:
           CONN_TIMEOUT: !Ref pConnTimeout
           READ_TIMEOUT: !Ref pReadTimeout
           VERIFY_CERTS: !Ref pVerifyCerts
-      Handler: sched_url.handlers.handler
+      # Handler: sched_url.handlers.handler
+      Handler: zappa.handler.lambda_handler
       MemorySize: 256
       Role: !ImportValue
         Fn::Sub: ${pAwsAccount}-${pRoleArnExportSuffix}

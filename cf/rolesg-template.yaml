@@ -46,6 +46,11 @@ Resources:
           ToPort: 443
           IpProtocol: tcp
           Description: Outgoint IPv6 https connections
+        - CidrIp: 10.0.64.0/18
+          FromPort: 5432
+          ToPort: 5432
+          IpProtocol: tcp
+          Description: Outgoing IPv4 postgresql connection to VPC
       Tags:
         - Key: Name
           Value: !Sub "${pAppName}-lambda-sg"

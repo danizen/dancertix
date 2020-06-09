@@ -1,0 +1,10 @@
+[
+	{
+		"ParameterKey": "pVpcName",
+		"ParameterValue": "vpc-001"
+	},
+	{
+		"ParameterKey": "pAppName",
+		"ParameterValue": "dancertix"
+	}
+]

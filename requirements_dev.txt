@@ -4,3 +4,4 @@
 cfn-lint
 django-debug-toolbar>=1.9.1
 ipython
+zappa

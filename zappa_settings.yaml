@@ -1,0 +1,33 @@
+---
+dev:
+  aws_region: us-east-1
+  django_settings: conf.settings.aws
+  profile_name: sbox-ab-django
+  project_name: dancertix
+  runtime: python3.6
+  exclude:
+    - build.xml
+    - requirements.txt
+    - requirements_*.txt
+    - node_modules
+    - dist
+    - cf
+    - .idea
+    - .pytest_cache
+    - .git
+    - logs
+  s3_bucket: nlm-sbox-ab-django-app-djangotest-artifacts-us-east-1
+  timeout_seconds: 300
+  manage_roles: false
+  role_name: NLM-SBOX-AB-DJANGO-dancertix-role
+  touch_path: /dev/colors
+  aws_environment_variables:
+    DJANGO_DB_SECRET: django-test-dancertix-app
+  delete_local_zip: false
+  vpc_config:
+    SubnetIds:
+      - subnet-0cda9df590d155357
+      - subnet-0a3da6c2848b943cf
+      - subnet-08f534374684f4760
+    SecurityGroupIds:
+      - sg-02de30357ffe8c032

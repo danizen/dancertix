@@ -202,8 +202,7 @@ LOGGING = {
         'full': {
             'format': '[%(asctime)s] %(process)d %(levelname)s %(name)s %(message)s'
         }
-    }
-    'extra_loggers': ['infrastructure', 'dancertix']
+    },
 }
 
 # For debugging rds_secrets
