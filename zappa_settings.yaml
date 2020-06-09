@@ -23,7 +23,6 @@ dev:
   touch_path: /dev/colors
   aws_environment_variables:
     DJANGO_DB_SECRET: django-test-dancertix-app
-  delete_local_zip: false
   vpc_config:
     SubnetIds:
       - subnet-0cda9df590d155357
