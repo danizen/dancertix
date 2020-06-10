@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'request_id.middleware.RequestIdMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -63,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REQUEST_ID_HEADER = 'X-Amzn-Trace-Id'
 
 ROOT_URLCONF = 'conf.urls'
 
@@ -197,12 +200,35 @@ CSRF_COOKIE_SECURE = True
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
     'formatters': {
         'full': {
-            'format': '[%(asctime)s] %(process)d %(levelname)s %(name)s %(message)s'
+            'format': '%(request_id)s [%(levelname)s] %(name)s %(message)s'
         }
     },
+    'filters': {
+        'request_id': {
+            '()': 'request_id.logging.RequestIdFilter'
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'filters': ['request_id'],
+            'formatter': 'full'
+        }
+    },
+    'loggers': {
+        'django': {'level': 'INFO', 'propagate': True, 'handlers': ['console']},
+        'dancertix': {'level': 'INFO', 'propagate': True, 'handlers': ['console']},
+        'authauth': {'level': 'INFO', 'propagate': True, 'handlers': ['console']},
+        'zappa': {'level': 'DEBUG', 'propagate': True, 'handlers': ['console']},
+        'infrastructure': {'level': 'INFO', 'propagate': True, 'handlers': ['console']},
+        'occs_core': {'level': 'INFO', 'propagate': True, 'handlers': ['console']},
+        'cloudauth': {'level': 'INFO', 'propagate': True, 'handlers': ['console']},
+        'rds_secrets': {'level': 'DEBUG', 'propagate': True, 'handlers': ['console']}
+    }
 }
 
 # For debugging rds_secrets
