@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'social_django',
     'django_filters',
     'rest_framework',
+    'storages',
 
     # third party internal apps
     'cloudauth',
@@ -56,7 +57,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'request_id.middleware.RequestIdMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -144,12 +144,10 @@ USE_TZ = True
 
 STATIC_URL = '/public/'
 STATIC_ROOT = os.path.join(BASE_DIR, "public")
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'vendor'),
 ]
-
 
 CRISPY_FAIL_SILENTLY = True
 
@@ -237,8 +235,8 @@ if os.environ.get('DEBUG_RDS_SECRETS', 'no').lower() in {'1', 'true', 'yes'}:
         'region_name': 'us-east-1'
     }
     RDS_CACHE_TIMEOUT = 15.0
-    LOGGING['extra_loggers']['rds_secrets'] = {
-        'handlers': ['file', 'console'],
+    LOGGING['loggers']['rds_secrets'] = {
+        'handlers': ['console'],
         'level': 'DEBUG',
         'propagate': True,
     }
