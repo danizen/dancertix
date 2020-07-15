@@ -15,8 +15,9 @@ __port = int(os.environ.setdefault('DJANGO_DB_PORT', '5432'))
 
 DATABASES = {
     'default': {
-        'ENGINE': 'rds_secrets.django.backends.postgresql',
+        'ENGINE': 'rds_secrets.backends.postgresql',
         'SECRET': __secret_id,
+        'NAME': 'dancertix',
         'HOST': 'localhost',
         'PORT': __port,
     }

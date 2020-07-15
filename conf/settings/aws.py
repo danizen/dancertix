@@ -9,8 +9,9 @@ __secret_id = os.environ.setdefault('DJANGO_DB_SECRET', 'django-test-dancertix-a
 
 DATABASES = {
     'default': {
-        'ENGINE': 'rds_secrets.django.backends.postgresql',
+        'ENGINE': 'rds_secrets.backends.postgresql',
         'SECRET': __secret_id,
+        'NAME': 'dancertix',
     }
 }
 
