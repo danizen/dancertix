@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     # third party internal apps
     'cloudauth',
     'cloudauth_admin',
-    'rds_secrets.django',
+    'rds_secrets',
 
     'dancertix',
 ]

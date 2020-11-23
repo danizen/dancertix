@@ -1,5 +1,8 @@
 ---
 dev:
+  layers:
+    - arn:aws:lambda:us-east-1:464622532012:layer:Datadog-Python36:23
+  lambda_handler: datadog_lambda.handler.handler
   aws_region: us-east-1
   django_settings: conf.settings.aws
   profile_name: sbox-ab-django
@@ -23,6 +26,10 @@ dev:
   touch_path: /dev/colors
   aws_environment_variables:
     DJANGO_DB_SECRET: django-test-dancertix-app
+    DD_LAMBDA_HANDLER: handler.lambda_handler
+    DD_TRACE_ENABLED: False
+    DD_FLUSH_TO_LOG: True
+    datadog: poc
   vpc_config:
     SubnetIds:
       - subnet-0cda9df590d155357

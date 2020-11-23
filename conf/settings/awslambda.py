@@ -27,7 +27,7 @@ AWS_HEADERS = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'rds_secrets.django.backends.postgresql',
+        'ENGINE': 'rds_secrets.backends.postgresql',
         'SECRET': __secret_id,
     }
 }
